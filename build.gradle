@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'edu.pucmm.ia'
+version = '1.0-SNAPSHOT'
+
+mainClassName="edu.pucmm.ia.Main"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.apache.cxf/cxf-core
+    implementation 'org.apache.cxf:cxf-core:4.0.2'
+    // https://mvnrepository.com/artifact/jakarta.xml.ws/jakarta.xml.ws-api
+    implementation 'jakarta.xml.ws:jakarta.xml.ws-api:4.0.0'
+    implementation "com.sun.xml.ws:jaxws-rt:3.0.2"
+
+}
+
+test {
+    useJUnitPlatform()
+}
